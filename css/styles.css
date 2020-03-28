@@ -3,6 +3,17 @@
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Dancing Script', cursive;
 }
+/* Body */
+body {
+    background:#02010a;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Cabezera */
 header {
     background:#5b7989;
@@ -41,10 +52,10 @@ li a:link,li a:visited,li a:active {
     background: #5b7989;
 }
 /* Main */
-#contenedor{
+main {
     width: 900px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -59,17 +70,34 @@ li a:link,li a:visited,li a:active {
 }
 #imagen_principal{
     width: 100%;
-    opacity: 0.5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#imagen_principal img{
+    width: 70%;
 }
 /* Main - Imagen Segundaria*/
-#playa {
+#imagenes_segundarias {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #d5c75f;
+}
+.foto1, .foto2{
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color:var(--color-main);
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 50%;
 }
 .foto1 img{
     border-radius: 10px;
     width: 100%;
+    border: 1px solid black;
     transition: width 1s;
     -webkit-filter: grayscale(70%);
     filter: grayscale(70%);
@@ -77,24 +105,46 @@ li a:link,li a:visited,li a:active {
 .foto2 img{
     border-radius: 10px;
     width: 100%;
+    border: 1px solid black;
     transition: width 1s;
     -webkit-filter: grayscale(70%);
     filter: grayscale(70%);
 }
 /* Footer */
 footer{  
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: var(--color-contacto);
+    background-color: #C6d5c5;
+    color: black;
 }
 #contacto {    
     text-align: center;
     width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 #terminos {
-    background-color: var(--color-formulario);
     border-radius: 10px;
     width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;    
+}
+#redes_sociales{
+    text-align: center;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+#derechos{
+    text-align: center;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 /* Media Query */
