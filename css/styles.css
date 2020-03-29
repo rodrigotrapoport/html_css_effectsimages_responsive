@@ -3,10 +3,16 @@
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Dancing Script', cursive;
 }
+/* 
+********************************************
+Web Page: INDEX.html 
+********************************************
+
+*/
 /* Body */
 body {
     background:#02010a;
-    width: 100%;
+    width: 900px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -17,13 +23,14 @@ body {
 /* Cabezera */
 header {
     background:#5b7989;
-    width: 100%;
-    border-radius: 10px;
+    width: 900px;
+    border-radius: 10px 10px  0px 0px ;
     color: white;
     display: flex;
     flex-direction: center;
     justify-content: space-between;
     align-items: center;
+    animation: a_header 2s;
 }
 h1 {
     text-shadow: 2px 2px #02010a;
@@ -51,6 +58,17 @@ li a:link,li a:visited,li a:active {
     color: white;
     background: #5b7989;
 }
+@-webkit-keyframes a_header {
+    0%{
+        margin-top: 150%;
+    }
+    60%{
+        margin-top: -5%;
+    }
+    100%{
+        margin-top: 0%;
+    }
+}
 /* Main */
 main {
     width: 900px;
@@ -61,7 +79,7 @@ main {
 }
 /* Main - Imagen Principal*/
 #principal {
-    width: 100%;
+    width: 900px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -74,6 +92,8 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 #imagen_principal img{
     width: 70%;
@@ -98,17 +118,29 @@ main {
     border-radius: 10px;
     width: 100%;
     border: 1px solid black;
-    transition: width 1s;
+    transition-property: transform, text-shadow, border;
+    transition-duration: 1s,1s,1s;
     -webkit-filter: grayscale(70%);
     filter: grayscale(70%);
+}
+.foto1 img:hover{
+    text-shadow: 2px 2px #82c3a6;
+    border: 2px solid black;
+    transform: rotate(10deg);
 }
 .foto2 img{
     border-radius: 10px;
     width: 100%;
     border: 1px solid black;
-    transition: width 1s;
+    transition-property: transform, text-shadow, border;
+    transition-duration: 1s,1s,1s;
     -webkit-filter: grayscale(70%);
     filter: grayscale(70%);
+}
+.foto2 img:hover{
+    text-shadow: 2px 2px #82c3a6;
+    border: 2px solid black;
+    transform: translate(20px, -5px);
 }
 /* Footer */
 footer{  
@@ -121,47 +153,82 @@ footer{
     padding-bottom: 30px;
     background-color: #C6d5c5;
     color: black;
+    border-radius: 0px 0px 10px 10px;
 }
-#contacto {    
+#contacto, #terminos, #redes_sociales, #derechos {    
     text-align: center;
-    width: 100%;
+    width: 25%;
     padding-right: 10px;
     padding-left: 10px;
 }
-#terminos {
-    border-radius: 10px;
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;    
+
+/* 
+********************************************
+Web Page: PAISAJES.html and RETRATOS.html 
+********************************************
+
+*/
+.galeria1, .galeria2 {
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-#redes_sociales{
-    text-align: center;
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
+.galeria1, .galeria2 img{
+    padding: 30px, 30px, 30px, 30px;
 }
-#derechos{
-    text-align: center;
+.fotog1, .fotog2, .fotog3, .fotog4, .fotog5, .fotog6{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33%;
+}
+.fotog1 img, .fotog2 img, .fotog3 img, .fotog4 img, .fotog5 img, .fotog6 img{
     width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
+}
+.fotog1{
+    -webkit-filter: blur(10px);
+    filter: blur(10px);    
+}
+.fotog2, .fotog4, .fotog6{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.fotog3{
+    -webkit-filter: sepia(90%);
+    filter: sepia(90%);        
 }
 
 /* Media Query */
 
-@media all and (max-width: 900px) {  
+@media all and (max-width: 900px) { 
+    body{
+        width: 100%;
+    } 
     header{
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-/*         color: var(--color-titulo);
-        background-color: var(--color-header); */
         padding-top: 10px;
         padding-bottom: 10px;
+        animation: a_header 2s;
+    }
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #contenedor{
         width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #menu {
         padding-left: 10px;
@@ -173,7 +240,7 @@ footer{
         padding-top: 0px;
         margin: 0px;
     }  
-    #menu  li{
+    #menu li{
         display: inline;
         list-style-type: none;
         display: inline;
@@ -181,31 +248,63 @@ footer{
         color: white;
         text-decoration:none;
     }
-    #rio, #parque, #playa, footer {
+    #principal {
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+        background: #82c3a6;
     }
-    #texto_principal{
-        margin-top: 70px;
-        margin-bottom: 70px;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    .texto {
-        width: 100%; 
-    }
-    .foto1 {
-       display: none; 
-    }
-    .foto2{
-        width: 100%; 
-    }
-    #contacto, #formulario{
+    #imagen_principal{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+    }    
+    #imagenes_segundarias {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #d5c75f;
+    }
+    .foto1 img, .foto2 img{
+       width: 100%; 
+    }
+    .galeria1, .galeria2 {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .galeria1{
+        padding: 5px 5px 5px 5px;
+    }
+    .galeria2{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+    }  
+    .fotog1, .fotog2, .fotog3, .fotog4, .fotog5, .fotog6{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 90%;
+    }
+    .fotog1 img, .fotog2 img, .fotog3 img, .fotog4 img, .fotog5 img, .fotog6 img{
+        width: 100%;
+    }  
+    footer{  
+        width: 100%;
+        flex-direction: column;
+    }
+    #contacto, #terminos, #redes_sociales, #derechos {    
+        width: 100%;
+        text-align: left;
     }
 }
 
